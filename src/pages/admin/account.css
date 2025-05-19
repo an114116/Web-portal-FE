@@ -1,0 +1,196 @@
+.dashboard-container {
+    display: flex;
+    background-color: #f4f4f4;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Sidebar */
+.custom-sidenav {
+    background-color: white;
+    /* width: 220px; */
+    transition: width 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Khi sidebar đóng */
+.custom-sidenav.closed {
+    width: 50px;
+}
+
+/* Ẩn tất cả nội dung khi sidebar đóng */
+/* .closed .sidenav-header span,
+.closed ul {
+    display: none;
+} */
+
+/* Chỉ hiển thị nút mở khi đóng */
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    width: 32%;
+}
+
+/* Canh giữa nút mở khi sidebar đóng */
+.closed .menu-toggle {
+    width: 100%;
+    text-align: center;
+}
+
+/* Sidebar Header */
+.sidenav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.sidenav-title{
+    color: #4880FF;
+    font-weight: bold;
+}
+
+/* Loại bỏ dấu chấm danh sách */
+.custom-sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Sidebar Items */
+.sidenav-item {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+    white-space: nowrap;
+}
+
+/* Khi hover thay đổi nền */
+.sidenav-item:hover {
+    background-color: #e0e0e0;
+}
+
+/* Mục đang được chọn */
+.sidenav-item.active {
+    background-color: #d8d8d8;
+    font-weight: bold;
+}
+
+/* Logout button styling */
+.logout-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.logout-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Custom Header */
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+/* User Section */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.content-wrapper {
+    padding: 2rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+/* Workload Section */
+.workload-section {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+}
+
+.bx--data-table {
+    width: 100%;
+    max-width: 100%; /* Giới hạn chiều rộng không vượt quá phần tử cha */
+    table-layout: auto; /* Để các cột có thể điều chỉnh kích thước linh hoạt */
+    border-collapse: collapse;
+    text-align: center;
+    overflow-x: auto; /* Cho phép cuộn ngang nếu bảng quá rộng */
+}
+
+
+.bx--data-table th,
+.bx--data-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap; /* Tránh bị xuống dòng */
+}
+
+.bx--data-table thead th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}

@@ -1,0 +1,351 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.dashboard-container {
+    display: flex;
+    height: 100vh;
+    background-color: #f4f4f4;
+    font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;  
+}
+
+.custom-sidenav {
+    background-color: white;
+    width: 220px;
+    transition: width 0.3s ease-in-out;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    position: relative;
+}
+
+.custom-sidenav.closed {
+    width: 60px;
+}
+
+.custom-sidenav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidenav-item {
+    display: block;
+    padding: 12px 16px;
+    font-size: 14px;
+    color: black;
+    text-decoration: none;
+    transition: background 0.3s ease-in-out;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.custom-sidenav.closed .sidenav-item {
+  text-align: center;
+  font-size: 18px;
+  width: 100%;
+  padding: 12px;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  color: transparent;
+}
+
+.custom-sidenav.closed .sidenav-item::first-letter {
+  color: black;
+  font-size: 20px;
+}
+
+
+.custom-sidenav.closed .sidenav-item::after {
+    content: "";
+    display: inline-block;
+    width: 0;
+    overflow: hidden;
+}
+
+.sidenav-item:hover {
+    background-color: #e0e0e0;
+}
+
+.sidenav-item.active {
+    background-color: #d8d8d8;
+    font-weight: bold;
+}
+
+.sidenav-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.menu-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: black;
+    margin: 0;
+    width: 32%;
+}
+
+.closed .menu-toggle {
+    width: 100%;
+    text-align: center;
+}
+
+.sidenav-title {
+    color: #4880FF;
+    font-weight: bold;
+}
+
+/* Logout button styling */
+.logout-btn {
+    background: none;
+    border: none;
+    color: black;
+    font-size: 14px;
+    cursor: pointer;
+    width: 100%;
+    text-align: left;
+}
+
+.logout-btn:hover {
+    background-color: #e0e0e0;
+}
+
+/* Custom Header */
+.custom-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Search Container */
+.search-container {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem;
+    background-color: white;
+    width: 100%;
+    max-width: 400px;
+}
+
+.search-icon {
+    width: 20px;
+    height: 20px;
+    color: #666;
+    margin-right: 0.5rem;
+}
+
+.search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    font-size: 16px;
+}
+
+/* User Section */
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left: auto;
+}
+
+.user-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* Main Content */
+.main-content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    overflow-y: auto;
+}
+
+.content-wrapper {
+    flex-grow: 1;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.workload-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+h2 {
+    margin-bottom: 1rem;
+}
+
+.button-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.create-job-btn {
+    background-color: #007bff;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.create-job-btn:hover {
+    background-color: #0056b3;
+}
+
+.create-job-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.delete-btn {
+    background-color: #ff0000;
+    color: rgb(2, 2, 2);
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 16px;
+    transition: background 0.3s ease;
+    border: none;
+}
+
+.delete-btn:hover {
+    background-color: #b30009;
+}
+
+.delete-btn svg {
+    width: 18px;
+    height: 18px;
+}
+
+.file-tree-box {
+  background-color: #ffffff;
+  padding: 16px;
+  border-radius: 8px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #333;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+  white-space: pre-wrap;
+}
+
+.file-node {
+    display: flex;
+    flex-direction: column;
+}
+
+.file-row {
+    display: flex;
+    align-items: center;
+    padding: 4px 0;
+    font-family: monospace;
+    transition: background 0.2s;
+}
+
+.file-row:hover {
+    background: #e0e0e0;
+}
+
+.file-icon {
+    width: 24px;
+    display: inline-block;
+    text-align: center;
+}
+
+.file-name {
+    margin-left: 8px;
+    flex-grow: 1;
+    font-weight: 500;
+}
+
+.file-size {
+    margin-left: auto;
+    color: #555;
+    font-size: 12px;
+}
+
+.file-children {
+    margin-left: 10px;
+    border-left: 1px dashed #bbb;
+    padding-left: 10px;
+}
+
+.selected-folder {
+  background-color: #d0e2ff;
+  border-radius: 4px;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    width: 400px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-actions .bx--btn {
+    width: 48%;
+}
+
+.modal-overlay .modal-content h3 {
+    margin-top: 0;
+}
+
+.modal-overlay::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -1;
+}
